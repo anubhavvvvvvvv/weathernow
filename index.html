@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WeatherNow</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button id="toggleModeBtn">🌙 Dark Mode</button>
+
+  <div class="container">
+    <h1>WeatherNow</h1>
+    <input type="text" id="cityInput" placeholder="Enter city name" />
+    <button onclick="getWeather()">Get Weather</button>
+
+    <div id="spinner" class="spinner hidden"></div>
+
+    <div id="weatherResult" class="hidden">
+      <h2 id="cityName"></h2>
+      <div id="weatherIconText"></div>
+      <p id="description"></p>
+      <p id="temp"></p>
+      <p id="humidity"></p>
+    </div>
+
+    <div id="forecast"></div>
+    <div id="hourly"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  transition: background 0.5s, color 0.3s;
+  flex-direction: column;
+}
+
+.container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+input {
+  padding: 12px;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+button {
+  padding: 12px;
+  width: 100%;
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#toggleModeBtn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: #333;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#toggleModeBtn:hover {
+  background: #444;
+  transform: scale(1.05);
+}
+
+#weatherResult {
+  margin-top: 20px;
+}
+
+#weatherIconText {
+  font-size: 50px;
+  margin: 10px 0;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+.hidden {
+  display: none;
+}
+
+#forecast, #hourly {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.forecast-item, .hourly-item {
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 10px;
+  margin: 5px;
+  min-width: 100px;
+  text-align: center;
+  font-size: 14px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+body.dark {
+  background: #1a1a1a;
+  color: #f0f0f0;
+}
+
+body.dark .container {
+  background-color: #2c2c2c;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+body.dark input,
+body.dark button {
+  background-color: #444;
+  color: white;
+  border: 1px solid #666;
+}
+
+body.dark #toggleModeBtn {
+  background: #f0f0f0;
+  color: #111;
+}
+
+/* Weather Backgrounds */
+body.weather-clear {
+  background: linear-gradient(to bottom, #87ceeb, #f0f8ff);
+}
+
+body.weather-clouds {
+  background: linear-gradient(to bottom, #c0c0c0, #dcdcdc);
+}
+
+body.weather-rain {
+  background: linear-gradient(to bottom, #5f9ea0, #7f8c8d);
+}
+
+body.weather-snow {
+  background: linear-gradient(to bottom, #ffffff, #e0e0e0);
+}
+
+body.weather-mist {
+  background: linear-gradient(to bottom, #a9a9a9, #d3d3d3);
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 20px;
+  }
+
+  #toggleModeBtn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
